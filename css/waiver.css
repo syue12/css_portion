@@ -1,0 +1,149 @@
+figcaption{
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.logo {
+    animation-name: appear;
+    animation-duration: 10s;
+    }
+
+.container img {
+    width: 100%;
+    }
+
+@media screen { 
+    .container {
+        display: grid;
+        margin: auto;
+        width: 70%;
+        max-width: 375px;
+        grid-template-columns: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    
+    .container {
+        width: 95%;
+        max-width: none;
+        background-image: url(../images/concrete_seamless.png);
+        grid-template-columns: 25% 25% 25%;
+        justify-content: space-around;
+    }
+    
+    figure {
+        grid-column: 1 / span 2;
+    }
+    
+    figure:nth-child(even) {
+        grid-column-start: 2;
+    }
+    
+    .jump:focus {
+        top: 0px;
+    }
+    
+}
+
+@media screen and (min-width: 750px) {
+    .container {
+        grid-template-columns: 20% 20% 20% 20%;
+        justify-content: space-between;
+    }
+    
+    figure:nth-child(even) {
+        grid-column-start: 3;
+    }
+    
+    figure:last-child {
+        grid-column-start: 2;
+    }
+    
+}
+
+
+@media screen and (min-width: 900px) {
+    figure {
+        width: 20%;
+    }
+    
+    figure:nth-child(4n) {
+        width: 40%;
+        border: 10px solid black;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: wrap;
+        align-items: center;
+    }
+    
+    figure:nth-child(2) {
+        order: 1;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    figure {
+        width: 75%;
+        margin-bottom: 20px;
+        grid-column: span 1;
+        z-index: 1;
+    }
+    
+    figure:nth-child(4n) {
+        width: 75%;
+    }
+    
+    figure:nth-child(2) {
+        order: 0;
+    }
+    
+    figure:nth-child(odd) {
+        transform: rotate(345deg);
+    }
+    
+    figure:nth-child(even) {
+        grid-column-start: 2;
+        transform: rotate(15deg);
+    }
+    
+    figure:last-child {
+        transform: rotate(0deg);
+        grid-column: 1 / span 2;
+        z-index: 0;
+    }
+    
+    .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        overflow: hidden;
+        justify-items: center;
+    }
+}
+
+@keyframes appear {
+    0% {filter: opacity(0%);}
+    100% {filter: opacity(100%);}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo {
+        animation: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
